@@ -9,10 +9,10 @@
 ##               5. Ayushi Kaushik
 
 
-## Specification Requirement( Developer ) :-->                                  ## Specification Requirement( End User ) :-->
+## Specification Requirement( Developer ) :-->                                  
 
 
-### Front end:->                                                                     ### Laptop with Internet Connection
+### Front end:->                                                                     
 
 #### HTML/CSS                                                                        
 #### Javascript  
@@ -31,6 +31,10 @@
 ### Hardware Requirement:->
 
 #### Laptop
+
+## Specification Requirement( End User ) :-->
+
+### Laptop with Internet Connection
 
 
 
