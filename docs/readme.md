@@ -1,10 +1,12 @@
 # For the Documentation
 ## Specifications
 ## Created on: 31-OCT-2022
-## Team details: 1. Sparsh Mehta
+## Team details: 
+##               1. Sparsh Mehta
 ##               2. Anuj Srivastava
 ##               3. Kunal Gaurav
 ##               4. Prince Kumar
+##               5. Ayushi Kaushik
 Specification Requirement :-->
 
 
