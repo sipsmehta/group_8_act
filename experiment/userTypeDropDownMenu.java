@@ -4,6 +4,7 @@ import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 
 public class userTypeDropDownMenu {
+
     public static void main(String[] args) {
 
         GraphicsEnvironment graphics =
@@ -15,12 +16,15 @@ public class userTypeDropDownMenu {
         // label.setText("This is in fullscreen mode!");
         // label.setOpaque(true);
         
+        
 
         frame.add(panel);
         // frame.add(label);
         frame.setUndecorated(true);
         frame.setResizable(false);
+        frame.setState(frame.ICONIFIED);
         device.setFullScreenWindow(frame);
+        
         
         String[] optionsToChoose = {"Trainee","ATC Controller"};
         String getUserType = (String) JOptionPane.showInputDialog(
