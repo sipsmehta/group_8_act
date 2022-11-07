@@ -1,3 +1,6 @@
+package air.traffic.controller;
+
+
 public class aircraft {
     boolean emergency;
     String planeType;
