@@ -1,4 +1,6 @@
-public class runway 
+package air.traffic.controller;
+
+public class runway
 {
     boolean occupied;
     boolean emergencyRunway;
