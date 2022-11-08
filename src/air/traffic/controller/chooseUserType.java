@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class chooseUserType extends JFrame implements ActionListener {
 
-    JComboBox comboid;
+    JComboBox comboId;
 
     chooseUserType(){
         setBounds(600,200,400,400);
@@ -16,23 +16,23 @@ public class chooseUserType extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
 
 
-        comboid = new JComboBox(new String[] {"TRAINEE", "ATC STAFF"});
-        comboid.setBounds(140,110,150,25);
-        comboid.setBackground(Color.WHITE);
-        comboid.addActionListener(this);
-        add(comboid );
+        comboId = new JComboBox(new String[] {"TRAINEE", "ATC STAFF"});
+        comboId.setBounds(140,110,150,25);
+        comboId.setBackground(Color.WHITE);
+        comboId.addActionListener(this);
+        add(comboId);
 
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent ae){
-        String str = (String) comboid.getSelectedItem();
+        String str = (String) comboId.getSelectedItem();
 
-        if(ae.getSource() == "TRAINEE"){
-            new trainee();
+        if(ae.getSource() == str){
+            new trainee().setVisible(true);
         }
-        else if(ae.getSource() == "ATC STAFF"){
-            new flightManager();
+        else if(ae.getSource() == str){
+            new atcStaff();
         }
 
 
