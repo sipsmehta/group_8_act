@@ -1,4 +1,5 @@
 package air.traffic.controller;
+<<<<<<< HEAD
 import java.util.Scanner;
 public class trainee 
 {
@@ -22,4 +23,9 @@ public class trainee
         flightManage.addRunway(new runway(false));
         choice = sc.nextBoolean();
     }    
+=======
+
+public class trainee {
+
+>>>>>>> 2adb7431c8f2c8111eb7e3e94809e7829c4c8eda
 }
