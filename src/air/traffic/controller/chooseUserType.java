@@ -29,7 +29,7 @@ public class chooseUserType extends JFrame implements ActionListener {
         String str = (String) comboId.getSelectedItem();
 
         if(ae.getSource() == str){
-            new trainee().setVisible(true);
+            new planeDetailEntry().setVisible(true);
         }
         else if(ae.getSource() == str){
             new atcStaff();
