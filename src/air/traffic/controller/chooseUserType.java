@@ -10,6 +10,9 @@ public class chooseUserType extends JFrame implements ActionListener {
 
     JComboBox comboId;
 
+    JButton submit;
+
+
     chooseUserType(){
         setBounds(600,200,400,400);
         setLayout(null);
@@ -22,18 +25,36 @@ public class chooseUserType extends JFrame implements ActionListener {
         comboId.addActionListener(this);
         add(comboId);
 
+        submit = new JButton("SUBMIT");
+        submit.setBounds(160,160,100,25);
+        submit.setBackground(new Color(131,193,233));
+        submit.setForeground(Color.WHITE);
+        submit.addActionListener(this);
+        add(submit);
+
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent ae){
-        String str = (String) comboId.getSelectedItem();
 
-        if(ae.getSource() == str){
-            new planeDetailEntry().setVisible(true);
+
+        if(ae.getSource() == submit){
+
+            String str = (String) comboId.getSelectedItem();
+
+//            System.out.println(str);
+
+            if (str == "TRAINEE") {
+                this.setVisible(false);
+                new planeDetailEntry().setVisible(true);
+
+            } else if (str == "ATC STAFF") {
+
+
+            }
+
         }
-        else if(ae.getSource() == str){
-            new atcStaff();
-        }
+
 
 
     }

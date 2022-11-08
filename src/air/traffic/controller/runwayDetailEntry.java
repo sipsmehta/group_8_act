@@ -12,7 +12,7 @@ public class runwayDetailEntry extends JFrame implements ActionListener {
 
 
     JLabel runwayLabel,label6,label7,label8;
-    JTextField text5,text6;
+    JTextField text5,text6,text8;
 
     JComboBox box2;
     JButton addMoreRunway,submitRunway;
@@ -48,12 +48,12 @@ public class runwayDetailEntry extends JFrame implements ActionListener {
         label6.setFont(new Font("SAN_SERIF",Font.BOLD,20));
         p1.add(label6);
 
-        box2 = new JComboBox(new String[] {"NO", "YES"});
-        box2.setBounds(250,90,200,20);
-        box2.setBorder(border);
-        box2.setBackground(Color.WHITE);
-//        box1.addActionListener(this);
-        p1.add(box2);
+        text8 = new JTextField();
+        text8.setBounds(240,90,200,20);
+        text8.setBorder(border);
+        text8.setText("false");
+//        text1.setBorder(BorderFactory.createEmptyBorder());
+        p1.add(text8);
 
         label7 = new JLabel("RUNWAY NUMBER");
         label7.setBounds(20,140,250,20);
