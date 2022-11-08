@@ -49,7 +49,7 @@ public class runwayDetailEntry extends JFrame implements ActionListener {
         p1.add(label6);
 
         text8 = new JTextField();
-        text8.setBounds(240,90,200,20);
+        text8.setBounds(250,90,200,20);
         text8.setBorder(border);
         text8.setText("false");
 //        text1.setBorder(BorderFactory.createEmptyBorder());
@@ -78,17 +78,17 @@ public class runwayDetailEntry extends JFrame implements ActionListener {
         p1.add(text6);
 
         addMoreRunway = new JButton("ADD");
-        addMoreRunway.setBounds(60,400,130,30);
-        addMoreRunway.setBackground(new Color(131,193,233));
-        addMoreRunway.setForeground(Color.WHITE);
+        addMoreRunway.setBounds(60,250,130,30);
+        addMoreRunway.setBackground(new Color(211,211,211));
+        addMoreRunway.setForeground(Color.BLACK);
 //        addMorePlane.setBorder(BorderFactory.createEmptyBorder());
         addMoreRunway.addActionListener(this);
         p1.add(addMoreRunway);
 
         submitRunway = new JButton("SUBMIT");
-        submitRunway.setBounds(250,400,130,30);
-        submitRunway.setBackground(new Color(131,193,233));
-        submitRunway.setForeground(Color.WHITE);
+        submitRunway.setBounds(250,250,130,30);
+        submitRunway.setBackground(new Color(211,211,211));
+        submitRunway.setForeground(Color.BLACK);
 //        addMorePlane.setBorder(BorderFactory.createEmptyBorder());
         submitRunway.addActionListener(this);
         p1.add(submitRunway);
@@ -100,18 +100,36 @@ public class runwayDetailEntry extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
 
+        boolean emergencyRunway = false;
         int runwayNumber;
         String direction;
+
+
+        emergencyRunway =Boolean.parseBoolean( text8.getText());
+
+
+//             System.out.println(emergencyFactor);
+
+        runwayNumber = Integer.parseInt(text5.getText());
+//            System.out.println(currFuel);
+
+        direction  = ((text6.getText()));
+//            System.out.println(currHeight);
+
+
 
 
 
         if(ae.getSource() == addMoreRunway){
 
-
+            new runway(emergencyRunway,runwayNumber,direction);
+            this.setVisible(false);
+            new runwayDetailEntry();
         }
 
         else if(ae.getSource() == submitRunway){
-
+            new runway(emergencyRunway,runwayNumber,direction);
+            this.setVisible(false);
 
         }
 

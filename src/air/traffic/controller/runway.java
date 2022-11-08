@@ -4,9 +4,15 @@ public class runway
 {
     boolean occupied=false;
     boolean emergencyRunway;
-    runway(boolean emergencyRunway)
+
+    int runwayNumber;
+
+    String direction;
+    runway(boolean emergencyRunway,int runwayNumber,String direction)
     {
         this.emergencyRunway = emergencyRunway;
+        this.runwayNumber = runwayNumber;
+        this.direction = direction;
     }
     void allocateRegularRunway(aircraft occupyingAircraft )
     {

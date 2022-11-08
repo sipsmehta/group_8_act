@@ -10,15 +10,10 @@ import java.awt.event.ActionListener;
 
 public class planeDetailEntry extends JFrame implements ActionListener {
 
+    JLabel detailsLabel,label1,label2,label3,label4,label5;
+    JTextField text1,text2,text3,text4,text7;
 
-
-
-
-    JLabel runwayLabel,detailsLabel,label1,label2,label3,label4,label5,label6,label7,label8;
-    JTextField text1,text2,text3,text4,text5,text6,text7;
-
-    JComboBox box1,box2;
-    JButton addMorePlane , submitPlane,addMoreRunway,submitRunway;
+    JButton addMorePlane , submitPlane;
     planeDetailEntry(){
 
         Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
@@ -127,74 +122,6 @@ public class planeDetailEntry extends JFrame implements ActionListener {
         p2.setLayout(null);
         add(p2);
 
-//        runwayLabel = new JLabel("RUNWAY DETAILS");
-//        runwayLabel.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
-//        runwayLabel.setBounds(100,10,350,50);
-//        runwayLabel.setBorder(border);
-//        runwayLabel.setFont(new Font("SAN_SERIF",Font.BOLD,30));
-//        p2.add(runwayLabel);
-//
-//        label6 = new JLabel("EMERGENCY");
-//        label6.setBounds(20,90,200,20);
-//        label6.setFont(new Font("SAN_SERIF",Font.BOLD,20));
-//        p2.add(label6);
-//
-//        box2 = new JComboBox(new String[] {"NO", "YES"});
-//        box2.setBounds(250,90,200,20);
-//        box2.setBorder(border);
-//        box2.setBackground(Color.WHITE);
-////        box1.addActionListener(this);
-//        p2.add(box2);
-//
-//        label7 = new JLabel("RUNWAY NUMBER");
-//        label7.setBounds(20,140,250,20);
-//        label7.setFont(new Font("SAN_SERIF",Font.BOLD,20));
-//        p2.add(label7);
-//
-//        text5 = new JTextField();
-//        text5.setBounds(250,140,200,20);
-//        text5.setBorder(border);
-////        text5.setBorder(BorderFactory.createEmptyBorder());
-//        p2.add(text5);
-//
-//        label8 = new JLabel("DIRECTION");
-//        label8.setBounds(20,190,200,20);
-//        label8.setFont(new Font("SAN_SERIF",Font.BOLD,20));
-//        p2.add(label8);
-//
-//        text6 = new JTextField();
-//        text6.setBounds(250,190,200,20);
-//        text6.setBorder(border);
-////        text6.setBorder(BorderFactory.createEmptyBorder());
-//        p2.add(text6);
-//
-//        addMoreRunway = new JButton("ADD");
-//        addMoreRunway.setBounds(60,400,130,30);
-//        addMoreRunway.setBackground(new Color(131,193,233));
-//        addMoreRunway.setForeground(Color.WHITE);
-////        addMorePlane.setBorder(BorderFactory.createEmptyBorder());
-//        addMoreRunway.addActionListener(this);
-//        p2.add(addMoreRunway);
-//
-//        submitRunway = new JButton("SUBMIT");
-//        submitRunway.setBounds(250,400,130,30);
-//        submitRunway.setBackground(new Color(131,193,233));
-//        submitRunway.setForeground(Color.WHITE);
-////        addMorePlane.setBorder(BorderFactory.createEmptyBorder());
-//        submitRunway.addActionListener(this);
-//        p2.add(submitRunway);
-
-//        String emergency =(String) box1 .getSelectedItem();
-//        System.out.println(emergency);
-//
-//        boolean emergencyFactor = false;
-//        if(emergency == "YES"){
-//            emergencyFactor = true;
-//        }
-//
-
-
-
         setVisible(true);
     }
 
@@ -206,45 +133,41 @@ public class planeDetailEntry extends JFrame implements ActionListener {
         int currSpeed;
         int planeNumber;
 
-//        int runwayNumber;
-//        String direction;
-
-        if (ae.getSource() == addMorePlane) {
-             emergencyFactor =Boolean.parseBoolean( text7.getText());
+        emergencyFactor =Boolean.parseBoolean( text7.getText());
 
 
-//             System.out.println(str);
+//             System.out.println(emergencyFactor);
 
-            currFuel = Integer.parseInt(text1.getText());
+        currFuel = Integer.parseInt(text1.getText());
 //            System.out.println(currFuel);
 
-            currHeight = Integer.parseInt((text2.getText()));
+        currHeight = Integer.parseInt((text2.getText()));
 //            System.out.println(currHeight);
 
-            currSpeed = Integer.parseInt(text3.getText());
+        currSpeed = Integer.parseInt(text3.getText());
 //            System.out.println(currSpeed);
 
-            planeNumber = Integer.parseInt((text4.getText()));
+        planeNumber = Integer.parseInt((text4.getText()));
 //            System.out.println(planeNumber);
 
 
+
+        if (ae.getSource() == addMorePlane) {
+
+            new aircraft(emergencyFactor,planeNumber,currFuel,currHeight,currSpeed);
+            this.setVisible(false);
+            new planeDetailEntry();
 
         }
 
         else if(ae.getSource() == submitPlane){
 
-
+            new aircraft(emergencyFactor,planeNumber,currFuel,currHeight,currSpeed);
+            this.setVisible(false);
+            new runwayDetailEntry().setVisible(true);
         }
 
-        else if(ae.getSource() == addMoreRunway){
 
-
-        }
-
-        else if(ae.getSource() == submitRunway){
-
-
-        }
 
     }
 

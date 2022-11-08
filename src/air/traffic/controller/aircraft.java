@@ -3,17 +3,18 @@ package air.traffic.controller;
 
 public class aircraft {
     boolean emergency;
-    String planeType;
+
+    int planeNumber;
     int currFuel;
-    double altitude;
-    int speed;
-    aircraft(boolean emergency,String planeType, int currFuel, double altitude,int speed)
+    double currHeight;
+    int currSpeed;
+    aircraft(boolean emergency,int planeNumber, int currFuel, double currHeight,int currSpeed)
     {
         this.emergency = emergency;
-        this.planeType = planeType;
+        this.planeNumber = planeNumber;
         this.currFuel = currFuel;
-        this.altitude =  altitude;
-        this.speed = speed;
+        this.currHeight =  currHeight;
+        this.currSpeed = currSpeed;
     }
     void ascend()
     {
