@@ -19,12 +19,22 @@ public class chooseUserType extends JFrame implements ActionListener {
         comboid = new JComboBox(new String[] {"TRAINEE", "ATC STAFF"});
         comboid.setBounds(140,110,150,25);
         comboid.setBackground(Color.WHITE);
+        comboid.addActionListener(this);
         add(comboid );
 
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent ae){
+        String str = (String) comboid.getSelectedItem();
+
+        if(ae.getSource() == "TRAINEE"){
+            new trainee();
+        }
+        else if(ae.getSource() == "ATC STAFF"){
+            new flightManager();
+        }
+
 
     }
 
