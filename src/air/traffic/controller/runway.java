@@ -2,7 +2,7 @@ package air.traffic.controller;
 
 public class runway
 {
-    boolean occupied;
+    boolean occupied=false;
     boolean emergencyRunway;
     runway(boolean emergencyRunway)
     {
@@ -18,10 +18,32 @@ public class runway
     }
     void allocateEmergencyRunway(aircraft occupyingAircraft)
     {
-
+        occupied = true;
     }
     void deallocateEmergencyRunway()
     {
-        
+        occupied = false;
+    }
+    boolean isEmergency()
+    {
+        if(emergencyRunway==true)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+    boolean isOccupied()
+    {
+        if(occupied==true)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
     }
 }

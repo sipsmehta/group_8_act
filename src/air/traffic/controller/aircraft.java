@@ -31,4 +31,11 @@ public class aircraft {
     {
 
     }
+    boolean needEmergencyLanding()
+    {
+        if(emergency)
+        return true;
+        else
+        return false;
+    }
 }
