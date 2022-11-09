@@ -1,9 +1,10 @@
 package air.traffic.controller;
 
 
-public class aircraft extends flightManager{
+public class aircraft {
     boolean emergency;
 
+    boolean landed = false;
     int planeNumber;
     int currFuel;
     double currHeight;
@@ -38,5 +39,17 @@ public class aircraft extends flightManager{
         return true;
         else
         return false;
+    }
+    boolean hasLanded()
+    {
+        return landed;
+    }
+    void setLanded()
+    {
+        landed = true;
+    }
+    int fuelCapacity()
+    {
+        return currFuel;
     }
 }

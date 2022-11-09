@@ -30,7 +30,7 @@ public class runway
     {
         occupied = false;
     }
-    boolean isEmergency()
+    boolean forEmergency()
     {
         if(emergencyRunway==true)
         {
@@ -51,5 +51,9 @@ public class runway
         {
             return false;
         }
+    }
+    void setOccupancy(boolean runwayOccupancy)
+    {
+        occupied = true;
     }
 }
