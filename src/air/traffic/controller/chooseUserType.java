@@ -14,19 +14,19 @@ public class chooseUserType extends JFrame implements ActionListener {
 
 
     chooseUserType(){
-        setBounds(600,200,400,400);
+        setBounds(0,0,1900,800);
         setLayout(null);
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.white);
 
 
         comboId = new JComboBox(new String[] {"TRAINEE", "ATC STAFF"});
-        comboId.setBounds(140,110,150,25);
-        comboId.setBackground(Color.WHITE);
+        comboId.setBounds(600,250,300,50);
+        comboId.setBackground(Color.cyan);
         comboId.addActionListener(this);
         add(comboId);
 
         submit = new JButton("SUBMIT");
-        submit.setBounds(160,160,100,25);
+        submit.setBounds(675,350,150,35);
         submit.setBackground(new Color(131,193,233));
         submit.setForeground(Color.WHITE);
         submit.addActionListener(this);
