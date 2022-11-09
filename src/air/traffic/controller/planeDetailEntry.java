@@ -150,11 +150,31 @@ public class planeDetailEntry extends JFrame implements ActionListener {
         planeNumber = Integer.parseInt((text4.getText()));
 //            System.out.println(planeNumber);
 
+        try{
+            Conn c = new Conn();
+            String query = "insert into FlightDetails values ('"+emergencyFactor+"','"+currFuel+"','"+currHeight+"','"+currSpeed+"','"+planeNumber+"')";
+            c.s.executeUpdate(query);
+            JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
 
 
         if (ae.getSource() == addMorePlane) {
 
-            new aircraft(emergencyFactor,planeNumber,currFuel,currHeight,currSpeed);
+//            new aircraft(emergencyFactor,planeNumber,currFuel,currHeight,currSpeed);
+
+//            try{
+//                Conn c = new Conn();
+//                String query = "insert into FlightDetails values ('"+emergencyFactor+"','"+currFuel+"','"+currHeight+"','"+currSpeed+"','"+planeNumber+"')";
+//                c.s.executeUpdate(query);
+//                JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
+//
+//            } catch (Exception e){
+//                e.printStackTrace();
+//            }
             this.setVisible(false);
             new planeDetailEntry();
 
@@ -162,7 +182,8 @@ public class planeDetailEntry extends JFrame implements ActionListener {
 
         else if(ae.getSource() == submitPlane){
 
-            new aircraft(emergencyFactor,planeNumber,currFuel,currHeight,currSpeed);
+
+//            new aircraft(emergencyFactor,planeNumber,currFuel,currHeight,currSpeed);
             this.setVisible(false);
             new runwayDetailEntry().setVisible(true);
         }

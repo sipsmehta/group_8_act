@@ -1,1 +1,2 @@
-# This is for source code
+# group_8_act
+Learning the industry software development
