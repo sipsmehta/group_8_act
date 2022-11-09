@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 
 public class planeDetailEntry extends JFrame implements ActionListener {
-
+    flightManager manager = new flightManager();
     JLabel detailsLabel,label1,label2,label3,label4,label5;
     JTextField text1,text2,text3,text4,text7;
 
