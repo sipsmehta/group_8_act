@@ -1,7 +1,7 @@
 package air.traffic.controller;
 
 
-public class aircraft extends flightManager{
+public class aircraft {
     boolean emergency;
 
     int planeNumber;
