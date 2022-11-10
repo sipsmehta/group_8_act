@@ -6,6 +6,9 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 
 
 public class runwayDetailEntry extends JFrame implements ActionListener {
@@ -118,15 +121,26 @@ public class runwayDetailEntry extends JFrame implements ActionListener {
         direction  = ((text6.getText()));
 //            System.out.println(currHeight);
 
-//        try{
-//            Conn c = new Conn();
-//            String query = "insert into FlightDetails values ('"+emergencyRunway+"','"+runwayNumber+"','"+direction+"')";
-//            c.s.executeUpdate(query);
-//            JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
-//
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
+
+
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con= DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/atc?characterEncoding=latin1&useConfigs=maxPerformance","root","root");//here atc is database name, root is username and password
+            Statement stmt=con.createStatement();
+            int ef;
+            if(emergencyRunway)
+                ef = 1;
+            else
+                ef = 0;
+            String query = "insert into RunwayDetails values ('"+ef+"','"+runwayNumber+"','"+direction+"')";
+            stmt.executeUpdate(query);
+            JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
 
 

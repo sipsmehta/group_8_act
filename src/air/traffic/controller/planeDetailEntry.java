@@ -6,6 +6,9 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 
 
 public class planeDetailEntry extends JFrame implements ActionListener {
@@ -150,6 +153,7 @@ public class planeDetailEntry extends JFrame implements ActionListener {
         planeNumber = Integer.parseInt((text4.getText()));
 //            System.out.println(planeNumber);
 
+//<<<<<<< HEAD
 //        try{
 //            Conn c = new Conn();
 //            String query = "insert into FlightDetails values ('"+emergencyFactor+"','"+currFuel+"','"+currHeight+"','"+currSpeed+"','"+planeNumber+"')";
@@ -158,7 +162,26 @@ public class planeDetailEntry extends JFrame implements ActionListener {
 //
 //        } catch (Exception e){
 //            e.printStackTrace();
-//        }
+////        }
+//=======
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/atc?characterEncoding=latin1&useConfigs=maxPerformance","root","root");//here atc is database name, root is username and password
+            Statement stmt=con.createStatement();
+            int ef;
+            if(emergencyFactor)
+                ef = 1;
+            else
+                ef = 0;
+            String query = "insert into FlightDetails values ('"+ef+"','"+currFuel+"','"+currHeight+"','"+currSpeed+"','"+planeNumber+"')";
+            stmt.executeUpdate(query);
+            JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
+            con.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+//>>>>>>> bfd5a4cec125138f0ce62bd8c5b6e19238915cbd
 
 
 
