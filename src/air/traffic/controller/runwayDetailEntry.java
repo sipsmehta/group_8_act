@@ -118,15 +118,15 @@ public class runwayDetailEntry extends JFrame implements ActionListener {
         direction  = ((text6.getText()));
 //            System.out.println(currHeight);
 
-        try{
-            Conn c = new Conn();
-            String query = "insert into FlightDetails values ('"+emergencyRunway+"','"+runwayNumber+"','"+direction+"')";
-            c.s.executeUpdate(query);
-            JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+//        try{
+//            Conn c = new Conn();
+//            String query = "insert into FlightDetails values ('"+emergencyRunway+"','"+runwayNumber+"','"+direction+"')";
+//            c.s.executeUpdate(query);
+//            JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
+//
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
 
 
 

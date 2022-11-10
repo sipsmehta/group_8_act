@@ -150,15 +150,15 @@ public class planeDetailEntry extends JFrame implements ActionListener {
         planeNumber = Integer.parseInt((text4.getText()));
 //            System.out.println(planeNumber);
 
-        try{
-            Conn c = new Conn();
-            String query = "insert into FlightDetails values ('"+emergencyFactor+"','"+currFuel+"','"+currHeight+"','"+currSpeed+"','"+planeNumber+"')";
-            c.s.executeUpdate(query);
-            JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+//        try{
+//            Conn c = new Conn();
+//            String query = "insert into FlightDetails values ('"+emergencyFactor+"','"+currFuel+"','"+currHeight+"','"+currSpeed+"','"+planeNumber+"')";
+//            c.s.executeUpdate(query);
+//            JOptionPane.showMessageDialog(null,"Flight Details Added Successfully");
+//
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
 
 
 
