@@ -12,7 +12,7 @@ public class Conn {
     public Conn(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/tms ? autoReconnect = true & useSSL = false ","root","root"); // Need to add own detail of sql
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/atc ","root","root"); // Need to add own detail of sql
             s= c.createStatement();
 
 

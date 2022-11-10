@@ -2,6 +2,10 @@ package air.traffic.controller;
 
 import javafx.util.Pair;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,6 +25,27 @@ public class flightManager {
         runwayList.add(new runway( emergencyRunway, runwayNumber,direction));
     }
 
+
+    void fetchAircraftDetails()
+    {
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/crud", "dbusername", "dbpassword");
+            Statement mystatement = con.createStatement();
+            ResultSet rs=mystatement.executeQuery("select * from FlightDetails");
+            while(rs.next())
+            {
+                System.out.println(codespeedy.getString("username")+"  "+codespeedy.getString("password")+"  "+codespeedy.getString("name")+" "+codespeedy.getString("email")+" "+codespeedy.getString("country")+" "+codespeedy.getString("age")+" "+codespeedy.getString("sex"));
+                boolean ef;
+                
+            }
+
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+    }
     void emergencyLanding()
     {
         //trying to land emergency plane on emergency runway
